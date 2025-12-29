@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo"> DoggyCare</div>
+        <nav>
+            <a href="/index.html">Inicio</a>
+            <a href="/boletin.html">Boletin de Busqueda</a>
+            <a href="/assets/pages/login.html" class="log-btn"><i class="fa-solid fa-user"></i> Iniciar sesion</a>
+        </nav>
+    </header>
+    <!---Fin de encabezado-->
+    <main class="main-register">
+        <section class="welcome">
+            <h1>Estás a un paso de <br> reencontrarte con tu <br>amigo peludo</h1>
+        </section>
+
+        <section class="register-box" style="width: 640px;">
+            <h2>Crear Cuenta</h2>
+            <p> Registrarte en nuestro sitio es completamente gratuito</p>
+            <form id="registerform" method="get">
+                <div class="input-row">
+                    <input type="text" name="nombre" id="name" placeholder="Nombre" required>
+                    <input type="text" name="ap_paterno" id="ln1" placeholder="Apellido Paterno" required>
+                    <input type="text" name="ap_materno" id="ln2" placeholder="Apellido Materno" required>
+                </div>
+                <input type="email" name="email" id="email" placeholder="Correo Electrónico" required>
+                <input type="tel" name="telefono" id="phone" placeholder="Teléfono Celular" required>
+                <input type="password" name="password" id="pass" placeholder="Contraseña" required>
+                <input type="password" name="confirmar" id="confirm-pass" placeholder="Confirmar contraseña" required>
+                <button type="submit">Siguiente</button>
+            </form>
+            <p class="register">¿Ya tienes una cuenta? <a href="./login.php">Inicia sesion</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <section>Pie</section>
+        <section>De</section>
+        <section>Página</section>
+    </footer>
+    <script type="text/javascript" src="../js/reg_script.js"></script>
+</body>
+
+</html>

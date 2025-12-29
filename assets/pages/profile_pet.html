@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Mascota - DoggyCare</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para el perfil */
+        .profile-container {
+            display: flex;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .profile-left { flex: 1; text-align: center; }
+        .profile-right { flex: 2; }
+        
+        .pet-photo-large {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 5px solid #f0f0f0;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: white;
+            margin-top: 10px;
+        }
+        .status-safe { background-color: #28a745; }
+        .status-lost { background-color: #dc3545; }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .data-item label { font-size: 12px; color: #777; display: block; }
+        .data-item span { font-weight: 500; color: #333; }
+
+        .vaccine-list { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .vaccine-list th, .vaccine-list td { text-align: left; padding: 8px; border-bottom: 1px solid #eee; }
+        .vaccine-list th { color: var(--primary-color); }
+
+        .btn-alert {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #dc3545;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .btn-alert:hover { background-color: #a71d2a; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Doggy Care</div>
+        <nav>
+            <a href="/index.html">Volver al Inicio</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="profile-container" id="profileContent" style="display:none;">
+            <div class="profile-left">
+                <img src="" alt="Foto Mascota" id="imgMascota" class="pet-photo-large">
+                <h1 id="nombreMascota" style="margin-bottom: 5px; color: var(--primary-color);">Nombre</h1>
+                <div id="badgeStatus" class="status-badge status-safe">En Casa</div>
+                
+                <button id="btnAction" class="btn-alert">
+                    <i class="fa-solid fa-triangle-exclamation"></i> REPORTAR COMO EXTRAVIADA
+                </button>
+            </div>
+
+            <div class="profile-right">
+                <h3 style="border-bottom: 2px solid #eee; padding-bottom: 10px;">Información General</h3>
+                <div class="data-grid">
+                    <div class="data-item"><label>Especie/Raza</label><span id="razaMascota">Perro - Labrador</span></div>
+                    <div class="data-item"><label>Sexo</label><span id="sexoMascota">Macho</span></div>
+                    <div class="data-item"><label>Edad/Tamaño</label><span id="tamanoMascota">Grande</span></div>
+                    <div class="data-item"><label>Color</label><span id="colorMascota">Dorado</span></div>
+                    <div class="data-item"><label>Esterilizado</label><span id="esterilizadoMascota">Sí</span></div>
+                    <div class="data-item"><label>RUAC</label><span id="ruacMascota">N/A</span></div>
+                </div>
+
+                <h3 style="border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 20px;">Identificación y Salud</h3>
+                <div class="data-item" style="margin-bottom: 10px;">
+                    <label>Chip de Rastreo</label>
+                    <span id="chipInfo">No tiene</span>
+                </div>
+
+                <label style="font-size: 14px; color: #777;">Vacunas Registradas:</label>
+                <table class="vaccine-list">
+                    <thead>
+                        <tr><th>Vacuna</th><th>Fecha</th><th>Vigencia</th></tr>
+                    </thead>
+                    <tbody id="tablaVacunas">
+                        </tbody>
+                </table>
+                
+                <div style="margin-top: 20px;">
+                    <label style="font-size: 12px; color: #777;">Señas Particulares:</label>
+                    <p id="senasMascota" style="background: #f9f9f9; padding: 10px; border-radius: 5px;">Ninguna</p>
+                </div>
+            </div>
+        </div>
+        <p id="loading" style="text-align: center; margin-top: 50px;">Cargando perfil...</p>
+    </main>
+
+    <script src="../js/profile_script.js"></script>
+</body>
+</html>

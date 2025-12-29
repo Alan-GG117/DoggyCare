@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar Mascota - DoggyCare</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .vaccine-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      .vaccine-table th {
+        text-align: left;
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--border-color);
+        padding: 5px;
+      }
+      .vaccine-table td {
+        padding: 8px 5px;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .btn-add {
+        background: #28a745;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+      .btn-delete {
+        background: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">DoggyCare</div>
+      <nav>
+        <a href="/index.html">Inicio</a>
+        <a href="#">Mis Mascotas</a>
+        <a href="#" class="log-btn"
+          ><i class="fa-solid fa-right-from-bracket"></i> Salir</a
+        >
+      </nav>
+    </header>
+
+    <main class="main-register">
+      <section
+        class="register-box"
+        style="width: 800px; margin-top: 20px; margin-bottom: 20px"
+      >
+        <h2>Nueva Mascota</h2>
+        <p>Registra los datos para proteger a tu compañero.</p>
+
+        <form id="petForm">
+          <h4>Datos Generales</h4>
+          <div class="input-row">
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Nombre de la mascota"
+              required
+            />
+            <select id="especie" required>
+              <option value="">Selecciona Especie...</option>
+              <option value="Perro">Perro</option>
+              <option value="Gato">Gato</option>
+            </select>
+          </div>
+
+          <div class="input-row">
+            <select id="raza" disabled required>
+              <option value="">Primero selecciona especie</option>
+            </select>
+
+            <select id="sexo" required>
+              <option value="">Sexo...</option>
+              <option value="Macho">Macho</option>
+              <option value="Hembra">Hembra</option>
+            </select>
+          </div>
+
+          <h4>Características Físicas</h4>
+          <div class="input-row">
+            <select id="tamano" required>
+              <option value="">Tamaño...</option>
+              <option value="Pequeño">Pequeño</option>
+              <option value="Mediano">Mediano</option>
+              <option value="Grande">Grande</option>
+              <option value="Gigante">Gigante</option>
+            </select>
+
+            <select id="tipoPelo" required>
+              <option value="">Tipo de Pelo...</option>
+              <option value="Corto">Corto</option>
+              <option value="Largo">Largo</option>
+              <option value="Rizado">Rizado</option>
+              <option value="Sin Pelo">Sin Pelo</option>
+            </select>
+          </div>
+
+          <div class="input-row">
+            <input
+              type="text"
+              id="color"
+              placeholder="Color principal"
+              required
+            />
+            <select id="esterilizado" required>
+              <option value="">¿Está esterilizado?</option>
+              <option value="true">Sí</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+
+          <label style="font-size: 14px; margin-top: 10px; display: block"
+            >Señas Particulares:</label
+          >
+          <textarea
+            id="senas"
+            rows="2"
+            style="
+              width: 90%;
+              padding: 10px;
+              border-radius: 6px;
+              border: 1px solid var(--border-color);
+            "
+            placeholder="Manchas, cicatrices o marcas únicas..."
+          ></textarea>
+
+          <h4 style="margin-top: 20px">Identificación</h4>
+          <div class="input-row">
+            <input type="text" id="ruac" placeholder="RUAC (Opcional)" />
+            <select id="tieneChip">
+              <option value="false">No tiene Chip</option>
+              <option value="true">Sí tiene Chip</option>
+            </select>
+          </div>
+
+          <div id="datosChip" class="input-row hidden">
+            <input type="text" id="tipoChip" placeholder="Tipo de Chip" />
+            <input type="text" id="numChip" placeholder="Número de Chip" />
+          </div>
+
+          <h4 style="margin-top: 20px">Cartilla de Vacunación</h4>
+
+          <table class="vaccine-table">
+            <thead>
+              <tr>
+                <th width="40%">Vacuna</th>
+                <th width="30%">Fecha Aplicación</th>
+                <th width="20%">Duración</th>
+                <th width="10%"></th>
+              </tr>
+            </thead>
+            <tbody id="listaVacunas"></tbody>
+          </table>
+          <button type="button" class="btn-add" id="btnAgregarVacuna">
+            + Agregar Vacuna
+          </button>
+
+          <h4 style="margin-top: 20px">Fotografía</h4>
+          <p style="font-size: 12px; color: #666">
+            Sube una foto clara de la cara de tu mascota (necesaria para la
+            búsqueda por IA).
+          </p>
+          <input
+            type="file"
+            id="fotoMascota"
+            accept="image/*"
+            required
+            style="padding: 5px"
+          />
+
+          <button type="submit" style="margin-top: 30px">
+            Registrar Mascota
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <script type="text/javascript" src="../js/pet_script.js"></script>
+  </body>
+</html>

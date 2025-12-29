@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletin de Busqueda - DoggyCare</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bulletin-header {
+            background-color: #dc3545;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .pets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 300px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pet-card.lost-mode {
+            border: 2px solid #dc3545;
+        }
+        .btn-found {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn-found:hover {background: #218838;}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">DoggyCare</div>
+        <nav>
+            <a href="/index.html">Inicio</a>
+            <a href="/assets/pages/login.html" class="log-btn">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <div class="bulletin-header">
+        <h1><i class="fa-solid fa-triangle-exclamation"></i> Boletin de Busqueda</h1>
+        <p>Ayudanos a encontrar a estos pequeños amigos</p>
+    </div>
+
+    <main>
+        <div class="loading" style="text-align: center; margin-top: 50px;">Buscando reportes activos...</div>
+
+        <div class="pets-grid" id="bulletinGrid"></div>
+
+        <p id="noData" style="display: none; text-align: center; font-size: 1.2rem; margin-top: 50px;">
+            No hay reportes de mascotas extraviadas por ahora.
+        </p>
+    </main>
+
+    <script type="text/javascript" src="/assets/js/bulletin_script.js"></script>
+</body>
+</html>

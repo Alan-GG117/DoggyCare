@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoggyCare</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">DoggyCare</div>
+        <nav>
+            <a href="/index.html">Inicio</a>
+            <a href="#">Boletin de busqueda</a>
+            <a href="/assets/pages/login.html" class="log-btn"><i class="fa-solid fa-user"></i>Iniciar sesion</a>
+        </nav>
+    </header>
+
+    <main class="main-register">
+        <section class="welcome">
+            <h1>Vamos a registrar tu <br> domicilio para saber <br> donde viven tus amigos peludos </h1>
+        </section>
+
+        <section class="register-box" style="width: 640px;">
+            <h2>Registro de domicilio</h2>
+            <p>Registrarte en nuestro sitio es completamente gratuito</p>
+            <form id="addrform" method="get">
+
+                <label for="cp">Código postal:</label>
+                <input type="text" id="cp" placeholder="Código postal a 5 digitos" maxlength="5" required>
+
+                <div id="loader" class="loader"></div>
+
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" placeholder="Se llenará automáticamente" readonly>
+
+                <div class="input-row">
+                    <div>
+                        <label for="alcaldia">Alcaldía:</label>
+                        <input type="text" id="alcaldia" placeholder="Alcaldía" readonly required>
+                    </div>
+                    <div>
+                        <label for="col">Colonia:</label>
+                        <select name="sel_col" id="col" disabled required>
+                            <option value="">Esperando código postal...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="streetType">Tipo de calle:</label>
+                <select name="sel_street" id="streetType" required>
+                    <option value="">Selecciona una opcion</option>
+                    <option value="Calle">Calle</option>
+                    <option value="Calzada">Calzada</option>
+                    <option value="Avenida">Avenida</option>
+                    <option value="Cerrada">Cerrada</option>
+                    <option value="Boulevard">Boulevard</option>
+                </select>
+
+                <label for="street">Nombre de la calle</label>
+                <input type="text" id="street" placeholder="Ingresa el nombre de la calle" required>
+
+                <div class="input-row">
+                    <div>
+                        <label for="ext">Número exterior</label>
+                        <input type="number" id="ext" placeholder="Numero exterior" required>
+                    </div>
+                    <div>
+                        <label for="int">Número interior</label>
+                        <input type="number" id="int" placeholder="Numero interior (opcional)">
+                    </div>
+                </div>
+
+                <button type="submit">Finalizar registro</button>
+            </form>
+        </section>
+    </main>
+    
+    <script type="text/javascript" src="../js/addr_script.js"></script>
+</body>
+
+</html>

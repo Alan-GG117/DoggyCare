@@ -1,0 +1,49 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>DoggyCare</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">DoggyCare</div>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="/boletin.html">Boletín de Búsqueda</a>
+            <a href="./assets/pages/login.html" class="log-btn"><i class="fa-solid fa-user"></i> Iniciar Sesión</a>
+            <a href="./assets/pages/register.html" class="reg-btn">Registrarse</a>
+        </nav>
+    </header>
+
+    <main class="main-index">
+    <section class="hero-section" id="heroSection">
+        <div class="text-content">
+            <h1 id="heroTitle">
+                Te ayudamos a reunirte <br />
+                con tus amigos peludos.
+            </h1>
+            <p id="heroText">
+                Nuestro sistema puede ayudarte a encontrar a tu mascota perdida.
+            </p>
+            <a href="/assets/pages/register.html" class="btn-primary" id="heroBtn">EMPEZAR AHORA</a>
+        </div>
+        <div class="image-content">
+            <img src="/assets/img/dog2.png" alt="Mascotas" />
+        </div>
+    </section>
+
+    <section class="pets-dashboard" id="petsDashboard" style="display: none; width: 100%; max-width: 1200px;">
+        <h2 style="color: var(--primary-color); margin-bottom: 20px;">Mis Mascotas</h2>
+        <div class="pets-grid" id="petsGrid">
+            </div>
+    </section>
+</main>
+
+<script src="/assets/js/index_logic.js"></script>
+</body>
+
+</html>
