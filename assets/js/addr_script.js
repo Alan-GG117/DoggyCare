@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         loader.style.display = 'block';
-        const token = "43a733dc-973e-43b9-884d-2f20034647ee"; 
+        const token = ""; 
         const apiUrl = `https://api.copomex.com/query/info_cp/${codigoPostal}?token=${token}`;
 
         try {
